@@ -12,6 +12,7 @@ public class Controller {
     @FXML
     private TextField numTaxiTxt;
 
+
     public void showCmnd(ActionEvent event){
         System.out.println(commandTxt.getText());
         commandTxt.setText("");
