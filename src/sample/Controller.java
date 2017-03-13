@@ -28,6 +28,7 @@ public class Controller {
         red_img.setFitHeight(height);
         red_img.setFitWidth(width);
         grid.add(red_img, 0, 0);
+
     }
 
     public void showNumTaxi(ActionEvent event) {
