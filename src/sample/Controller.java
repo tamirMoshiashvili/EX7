@@ -4,8 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import sample.code.TaxiCenter;
@@ -33,6 +31,8 @@ public class Controller {
      * @param event event.
      */
     public void executeCmd(ActionEvent event) {
+        // Clean the error label.
+        error.setText("");
         // Read the text.
         String txt = commandTxt.getText().toLowerCase();
         if (txt.equals("7")) {
@@ -46,6 +46,7 @@ public class Controller {
             // Move the taxi with the given id to the needed direction.
             TaxiCenter taxiCenter = TaxiCenter.getInstance(grid);
             boolean validMove = false;
+            boolean validCharacter = true;
             if (taxiCenter.isInGame(id)) {
                 // The player is in the game so move him.
                 switch (direction) {
@@ -61,12 +62,17 @@ public class Controller {
                     case 'w':
                         validMove = taxiCenter.moveUp(id);
                         break;
+                    default:
+                        error.setText("Invalid Character !!!");
+                        validCharacter = false;
                 }
-                if (validMove){
+                if (validMove) {
                     // Update the clock.
                     int currentTime = Integer.parseInt(clock.getText());
                     currentTime++;
                     clock.setText(Integer.toString(currentTime));
+                } else if (validCharacter) {
+                    error.setText("Invalid Move !!!");
                 }
             }
         }
@@ -80,6 +86,8 @@ public class Controller {
      * @param event event.
      */
     public void addTaxi(ActionEvent event) {
+        // Clean the error label.
+        error.setText("");
         int num = Integer.parseInt(numTaxiTxt.getText());
         TaxiCenter taxiCenter = TaxiCenter.getInstance(grid);
         taxiCenter.addTaxi(num);
