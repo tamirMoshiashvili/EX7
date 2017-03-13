@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 public class Controller {
 
@@ -28,6 +29,10 @@ public class Controller {
         red_img.setFitHeight(height);
         red_img.setFitWidth(width);
         grid.add(red_img, 0, 0);
+
+
+        Stage stage = (Stage) grid.getScene().getWindow();
+        stage.close();
     }
 
     public void showNumTaxi(ActionEvent event) {
