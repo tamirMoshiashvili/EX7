@@ -45,7 +45,7 @@
     <Button fx:id="addBtn" layoutX="255.0" layoutY="2.0" mnemonicParsing="false" onAction="#addTaxi" prefHeight="25.0" text="Add" textAlignment="CENTER" />
     <TextField id="numTaxiText" fx:id="numTaxiTxt" layoutX="155.0" layoutY="2.0" prefHeight="25.0" prefWidth="100.0" />
     <Label fx:id="timeLbl" layoutX="327.0" layoutY="2.0" maxWidth="50.0" prefHeight="25.0" text="Time:" />
-    <Label fx:id="errorLbl" layoutX="403.0" layoutY="1.0" prefHeight="25.0" prefWidth="196.9998779296875" text="" />
-    <Label layoutX="373.0" layoutY="2.0" minHeight="25.0" prefWidth="30.0" text="0" />
+    <Label id="errorLbl" fx:id="error" layoutX="403.0" layoutY="1.0" prefHeight="25.0" prefWidth="196.9998779296875" text="" />
+    <Label fx:id="clock" layoutX="373.0" layoutY="2.0" minHeight="25.0" prefWidth="30.0" text="0" />
   </children>
 </Pane>
