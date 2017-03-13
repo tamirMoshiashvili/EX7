@@ -1,3 +1,16 @@
-.clock {
-    -fx-background-color: #ab4642;
+.root {
+    -fx-background-color: lightgray;
+}
+
+.label {
+    -fx-text-fill: black;
+}
+
+.button {
+    -fx-text-fill: black;
+    -fx-background-color: ghostwhite;
+}
+
+.text-field {
+    -fx-text-fill: #c71585;;
 }
