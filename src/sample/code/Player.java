@@ -16,10 +16,15 @@ public class Player {
     /**
      * Constructor.
      *
-     * @param url string which is the url to the image-file.
+     * @param url    string which is the url to the image-file.
+     * @param width  width of the image.
+     * @param height height of the image.
      */
-    public Player(String url) {
-        this.img = new ImageView(new Image(getClass().getResourceAsStream(url)));
+    public Player(String url, double width, double height) {
+        Image image = new Image(getClass().getResourceAsStream(url));
+        this.img = new ImageView(image);
+        this.img.setFitHeight(height);
+        this.img.setFitWidth(width);
         this.col = 0;
         this.row = 9;
         this.visible = false;

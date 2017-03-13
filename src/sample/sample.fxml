@@ -41,10 +41,11 @@
       </rowConstraints>
     </GridPane>
     <TextField id="commandText" fx:id="commandTxt" layoutX="0.0" layoutY="2.0" prefHeight="25.0" prefWidth="100.0" />
-    <Button fx:id="commandBtn" layoutX="100.0" layoutY="1.0" mnemonicParsing="false" onAction="#showCmnd" prefHeight="25.0" text="Send" textAlignment="CENTER" />
-    <Button fx:id="addBtn" layoutX="255.0" layoutY="2.0" mnemonicParsing="false" onAction="#showNumTaxi" prefHeight="25.0" text="Add" textAlignment="CENTER" />
+    <Button fx:id="commandBtn" layoutX="100.0" layoutY="1.0" mnemonicParsing="false" onAction="#executeCmd" prefHeight="25.0" text="Send" textAlignment="CENTER" />
+    <Button fx:id="addBtn" layoutX="255.0" layoutY="2.0" mnemonicParsing="false" onAction="#addTaxi" prefHeight="25.0" text="Add" textAlignment="CENTER" />
     <TextField id="numTaxiText" fx:id="numTaxiTxt" layoutX="155.0" layoutY="2.0" prefHeight="25.0" prefWidth="100.0" />
-    <Label fx:id="timeLbl" layoutX="327.0" layoutY="2.0" maxWidth="50.0" prefHeight="25.0" text="Time: 0" />
-    <Label fx:id="errorLbl" layoutX="391.0" layoutY="1.0" prefHeight="25.0" prefWidth="209.0" text="Error: None...Yet..." />
+    <Label fx:id="timeLbl" layoutX="327.0" layoutY="2.0" maxWidth="50.0" prefHeight="25.0" text="Time:" />
+    <Label fx:id="errorLbl" layoutX="403.0" layoutY="1.0" prefHeight="25.0" prefWidth="196.9998779296875" text="" />
+    <Label layoutX="373.0" layoutY="2.0" minHeight="25.0" prefWidth="30.0" text="0" />
   </children>
 </Pane>

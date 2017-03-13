@@ -6,10 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Collection of players that handles the logic of the game.
+ * Singleton of players that handles the logic of the game.
  */
 public class TaxiCenter {
 
+    private static TaxiCenter ourInstance = null;
     private Map<Integer, Player> players;
     private GridPane grid;
 
@@ -18,15 +19,41 @@ public class TaxiCenter {
      *
      * @param gridPane grid pane.
      */
-    public TaxiCenter(GridPane gridPane) {
+    private TaxiCenter(GridPane gridPane) {
         this.grid = gridPane;
+        // Calculate the width and height of image.
+        double width = (grid.getPrefWidth() - grid.getHgap() * 9) / 10;
+        double height = (grid.getPrefHeight() - grid.getVgap() * 9) / 10;
+
         this.players = new HashMap<Integer, Player>();
         // Create 5 players.
-        this.players.put(0, new Player("blue_car.png"));
-        this.players.put(1, new Player("bluish_car.png"));
-        this.players.put(2, new Player("green_car.png"));
-        this.players.put(3, new Player("pink_car.png"));
-        this.players.put(4, new Player("red_car.png"));
+        this.players.put(0, new Player("../resources/blue_car.png", width, height));
+        this.players.put(1, new Player("../resources/bluish_car.png", width, height));
+        this.players.put(2, new Player("../resources/green_car.png", width, height));
+        this.players.put(3, new Player("../resources/pink_car.png", width, height));
+        this.players.put(4, new Player("../resources/red_car.png", width, height));
+    }
+
+    /**
+     * Get the instance of the class.
+     *
+     * @param gridPane grid pane.
+     * @return taxi center object.
+     */
+    public static TaxiCenter getInstance(GridPane gridPane) {
+        if (ourInstance == null) {
+            ourInstance = new TaxiCenter(gridPane);
+        }
+        return ourInstance;
+    }
+
+    /**
+     * Check if the player with the given id is in the game.
+     * @param id id number of a player.
+     * @return true if the player is in the game, false otherwise.
+     */
+    public boolean isInGame(int id){
+        return players.get(id).isVisible();
     }
 
     /**
@@ -119,10 +146,11 @@ public class TaxiCenter {
     public void addTaxi(int num) {
         // Iterate through the players.
         for (Player player : this.players.values()) {
-            if (num-- > 0 && !player.isVisible()) {
+            if (num > 0 && !player.isVisible()) {
                 // Add the player to the game.
                 player.setVisible(true);
                 this.grid.add(player.getImg(), player.getCol(), player.getRow());
+                --num;
             }
             if (num == 0) {
                 // Done adding taxi.
