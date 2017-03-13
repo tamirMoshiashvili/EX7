@@ -19,10 +19,10 @@ public class TaxiCenter {
         players = new HashMap<Integer, Player>();
         // Create 5 players.
         players.put(0, new Player("blue_car.png"));
-        players.put(0, new Player("bluish_car.png"));
-        players.put(0, new Player("green_car.png"));
-        players.put(0, new Player("pink_car.png"));
-        players.put(0, new Player("red_car.png"));
+        players.put(1, new Player("bluish_car.png"));
+        players.put(2, new Player("green_car.png"));
+        players.put(3, new Player("pink_car.png"));
+        players.put(4, new Player("red_car.png"));
     }
 
     /**
