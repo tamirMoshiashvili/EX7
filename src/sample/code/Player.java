@@ -15,6 +15,7 @@ public class Player {
 
     /**
      * Constructor.
+     *
      * @param url string which is the url to the image-file.
      */
     public Player(String url) {
@@ -26,38 +27,43 @@ public class Player {
 
     /**
      * Get the image-view object.
+     *
      * @return image-view object.
      */
     public ImageView getImg() {
-        return img;
+        return this.img;
     }
 
     /**
      * Get the column index.
+     *
      * @return integer.
      */
     public int getCol() {
-        return col;
+        return this.col;
     }
 
     /**
      * Get the row index.
+     *
      * @return integer.
      */
     public int getRow() {
-        return row;
+        return this.row;
     }
 
     /**
      * Check if the player is in the game.
+     *
      * @return true if it is, false otherwise.
      */
     public boolean isVisible() {
-        return visible;
+        return this.visible;
     }
 
     /**
      * Set the col of the player to the given.
+     *
      * @param newCol index.
      */
     public void setCol(int newCol) {
@@ -66,6 +72,7 @@ public class Player {
 
     /**
      * Set the row of the player to the given.
+     *
      * @param newRow index.
      */
     public void setRow(int newRow) {
@@ -74,6 +81,7 @@ public class Player {
 
     /**
      * Set the visibility of the player to the given.
+     *
      * @param newVisible true if in game, false otherwise.
      */
     public void setVisible(boolean newVisible) {
