@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("graphic.fxml"));
         primaryStage.setTitle("Taxi Center");
         Scene scene = new Scene(root, 600, 500);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
@@ -22,5 +22,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-
-
